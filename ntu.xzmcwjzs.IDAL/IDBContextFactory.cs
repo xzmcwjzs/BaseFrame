@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ntu.xzmcwjzs.BLL
+namespace ntu.xzmcwjzs.IDAL
 {
-    public class Class1
+    public interface IDBContextFactory
     {
+        DbContext CreateDbContext();
     }
 }

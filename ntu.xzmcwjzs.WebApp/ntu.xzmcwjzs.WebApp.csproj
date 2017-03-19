@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +235,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -245,6 +247,28 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ntu.xzmcwjzs.BLL\ntu.xzmcwjzs.BLL.csproj">
+      <Project>{ec7cacd2-bf15-49cd-99bb-4ebfd1cb763d}</Project>
+      <Name>ntu.xzmcwjzs.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.Common\ntu.xzmcwjzs.Common.csproj">
+      <Project>{aec92432-d8bd-4df1-9256-39748d0fb6c0}</Project>
+      <Name>ntu.xzmcwjzs.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.IBLL\ntu.xzmcwjzs.IBLL.csproj">
+      <Project>{11df9826-60f8-4387-8c56-27ceb409c94b}</Project>
+      <Name>ntu.xzmcwjzs.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.Ioc\ntu.xzmcwjzs.Ioc.csproj">
+      <Project>{40ba43e8-d6e2-40ea-afaa-81d2f82d3ab4}</Project>
+      <Name>ntu.xzmcwjzs.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.Model\ntu.xzmcwjzs.Model.csproj">
+      <Project>{60c82364-fcd9-4879-9053-61f6b47adcf5}</Project>
+      <Name>ntu.xzmcwjzs.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

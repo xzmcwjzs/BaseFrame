@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ntu.xzmcwjzs.IDAL
+namespace ntu.xzmcwjzs.NHibernateDAL
 {
     public class Class1
     {
