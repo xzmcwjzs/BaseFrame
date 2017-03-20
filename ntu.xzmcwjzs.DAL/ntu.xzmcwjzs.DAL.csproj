@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AbstractFactory.cs" />
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="DalFactory.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TestRepository.cs" />
@@ -55,14 +56,13 @@
       <Project>{ffc838cb-e8bd-4465-991f-82dcc1bd30a7}</Project>
       <Name>ntu.xzmcwjzs.IDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ntu.xzmcwjzs.Ioc\ntu.xzmcwjzs.Ioc.csproj">
-      <Project>{40ba43e8-d6e2-40ea-afaa-81d2f82d3ab4}</Project>
-      <Name>ntu.xzmcwjzs.Ioc</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ntu.xzmcwjzs.Model\ntu.xzmcwjzs.Model.csproj">
       <Project>{60c82364-fcd9-4879-9053-61f6b47adcf5}</Project>
       <Name>ntu.xzmcwjzs.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

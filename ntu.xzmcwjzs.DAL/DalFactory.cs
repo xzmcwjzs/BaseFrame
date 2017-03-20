@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ntu.xzmcwjzs.Ioc
+namespace ntu.xzmcwjzs.DAL
 {
-    public class Class1
+    public partial class DalFactory
     {
+
     }
 }

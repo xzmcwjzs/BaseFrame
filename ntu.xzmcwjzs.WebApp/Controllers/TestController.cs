@@ -14,10 +14,15 @@ using ntu.xzmcwjzs.BLL.Services;
 
 namespace ntu.xzmcwjzs.WebApp.Controllers
 {
-    public class TestController : Controller
+    public class TestController : BaseController
     {
         //private XZMCWJZSContext db = new XZMCWJZSContext();
-        ITestService service = new TestService();
+        //ITestService service = new TestService();
+        private readonly ITestService service;
+        public TestController(ITestService service)
+        {
+            this.service = service;
+        }
         // GET: Test
         public ActionResult Index()
         {
