@@ -18,7 +18,10 @@ namespace ntu.xzmcwjzs.WebApp
         protected void Application_Start()
         {
             //使用autofac 注入
-            RegisterDependency();
+            RegisterDependency(); 
+            //从配置文件读取log4net的配置，然后进行一个初始化工作。
+            log4net.Config.XmlConfigurator.Configure(); 
+
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -33,10 +36,10 @@ namespace ntu.xzmcwjzs.WebApp
             IocConfig.SetupResolveRules(builder);
             //builder.RegisterType<TestService>().As<ITestService>();
 
-            builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());//注册mvc容器的实现  
 
-            var container = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            var container = builder.Build();//Build()方法是表示：创建一个容器
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));//注册MVC容器
         }
     }
 }

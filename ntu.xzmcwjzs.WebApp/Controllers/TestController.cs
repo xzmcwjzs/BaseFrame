@@ -25,7 +25,7 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
         }
         // GET: Test
         public ActionResult Index()
-        {
+        { 
             // return View(await db.Test.ToListAsync());
             var list = service.LoadEntities(t => true).ToList();
             return View(list);

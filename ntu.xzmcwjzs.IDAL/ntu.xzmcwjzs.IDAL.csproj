@@ -47,6 +47,16 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IDBContextFactory.cs" />
     <Compile Include="IDBSession.cs" />
+    <Compile Include="IDBSession1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IDBSession.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositories\IRepositories.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IRepositories.tt</DependentUpon>
+    </Compile>
     <Compile Include="IRepositories\ITestRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,7 +66,19 @@
       <Name>ntu.xzmcwjzs.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="IDBSession.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IDBSession1.cs</LastGenOutput>
+    </Content>
+    <Content Include="IRepositories\IRepositories.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepositories.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

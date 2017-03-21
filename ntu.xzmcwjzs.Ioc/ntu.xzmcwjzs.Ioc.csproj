@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -87,6 +88,10 @@
     <ProjectReference Include="..\ntu.xzmcwjzs.BLL\ntu.xzmcwjzs.BLL.csproj">
       <Project>{ec7cacd2-bf15-49cd-99bb-4ebfd1cb763d}</Project>
       <Name>ntu.xzmcwjzs.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.DAL\ntu.xzmcwjzs.DAL.csproj">
+      <Project>{ae7f039f-0e2c-455f-8ec8-0355b4bba5d8}</Project>
+      <Name>ntu.xzmcwjzs.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ntu.xzmcwjzs.IBLL\ntu.xzmcwjzs.IBLL.csproj">
       <Project>{11df9826-60f8-4387-8c56-27ceb409c94b}</Project>

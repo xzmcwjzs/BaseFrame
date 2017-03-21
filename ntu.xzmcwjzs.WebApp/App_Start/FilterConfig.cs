@@ -7,7 +7,8 @@ namespace ntu.xzmcwjzs.WebApp
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            // filters.Add(new HandleErrorAttribute());
+            filters.Add(new ntu.xzmcwjzs.WebApp.Common.MyAttributes.MyExceptionAttribute());
         }
     }
 }

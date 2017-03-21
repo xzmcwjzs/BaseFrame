@@ -1,0 +1,48 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic"#>
+<#@ import namespace="System.IO"#>
+<#@ import namespace="System.Reflection"#>
+<#@ import namespace="System.Text" #> 
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using ntu.xzmcwjzs.DAL.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ntu.xzmcwjzs.DALSessionFactory
+{
+ public partial  class AbstractFactory
+    {
+ <#
+            string currentPath =Path.GetDirectoryName(this.Host.TemplateFile);
+            string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\ntu.xzmcwjzs.DALSessionFactory"));
+            string txtFilePath= Path.Combine(solutionPath, @"ntu.xzmcwjzs.Model\ClassNameTxt\ClassName.txt");  
+            string[] ClassNameList =new string[]{""};
+            using(StreamReader reader=new StreamReader(txtFilePath)){
+                 string classNameStr=reader.ReadToEnd();
+                 int index=classNameStr.LastIndexOf(',');
+	             classNameStr=classNameStr.Substring(0,index);
+                 ClassNameList= classNameStr.Split(',');
+          }
+        #>
+     <#
+    if(ClassNameList[0]!=""){
+        foreach (var className in ClassNameList)
+		{#>
+	    public static <#=className#>Repository Get<#=className#>Repository()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".Repositories.<#=className#>Repository") as 
+
+<#=className#>Repository;
+		    }
+	  <#}
+    }#> 
+   }
+}

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ntu.xzmcwjzs.Common
+namespace ntu.xzmcwjzs.Common.Log
 {
-    public class Class1
+    public interface ILogWriter
     {
+        void WriteLogInfo(string txt);
     }
 }
