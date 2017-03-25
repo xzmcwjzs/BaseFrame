@@ -19,6 +19,5 @@ namespace ntu.xzmcwjzs.DALSessionFactory
         //{
         //    return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".Repositories.TestRepository") as TestRepository;
         //}
-
     }
 }

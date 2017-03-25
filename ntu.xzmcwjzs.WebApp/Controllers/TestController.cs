@@ -9,8 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using ntu.xzmcwjzs.Model.DataBaseContext;
 using ntu.xzmcwjzs.Model.Entities;
-using ntu.xzmcwjzs.IBLL.IServices;
-using ntu.xzmcwjzs.BLL.Services;
+using ntu.xzmcwjzs.IBLL.IServices; 
 
 namespace ntu.xzmcwjzs.WebApp.Controllers
 {
@@ -18,11 +17,11 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
     {
         //private XZMCWJZSContext db = new XZMCWJZSContext();
         //ITestService service = new TestService();
-        private readonly ITestService service;
+        private readonly ITestService service; 
         public TestController(ITestService service)
         {
             this.service = service;
-        }
+        } 
         // GET: Test
         public ActionResult Index()
         { 

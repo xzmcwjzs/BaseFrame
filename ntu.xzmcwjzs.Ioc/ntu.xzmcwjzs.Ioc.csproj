@@ -97,6 +97,10 @@
       <Project>{11df9826-60f8-4387-8c56-27ceb409c94b}</Project>
       <Name>ntu.xzmcwjzs.IBLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.IDAL\ntu.xzmcwjzs.IDAL.csproj">
+      <Project>{ffc838cb-e8bd-4465-991f-82dcc1bd30a7}</Project>
+      <Name>ntu.xzmcwjzs.IDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

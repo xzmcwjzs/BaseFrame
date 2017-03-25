@@ -1,4 +1,10 @@
 ﻿ 
+  
+  
+  
+  
+  
+
 using ntu.xzmcwjzs.Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ntu.xzmcwjzs.IBLL.IServices
 {
-    		
+ 		
 	public partial interface ITestService : IBaseService<Test>
     {
     }

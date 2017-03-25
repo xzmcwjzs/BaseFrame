@@ -1,4 +1,9 @@
 ﻿ 
+  
+  
+  
+  
+ 
 using ntu.xzmcwjzs.DAL.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,7 +17,7 @@ namespace ntu.xzmcwjzs.DALSessionFactory
 {
  public partial  class AbstractFactory
     {
-      	    public static TestRepository GetTestRepository()
+ 	    public static TestRepository GetTestRepository()
 		    {
 		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".Repositories.TestRepository") as 
 

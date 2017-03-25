@@ -1,4 +1,9 @@
 ﻿ 
+  
+  
+  
+  
+  
 using ntu.xzmcwjzs.IDAL.IRepositories;
 using System;
 using System.Collections.Generic;
@@ -11,7 +16,7 @@ namespace ntu.xzmcwjzs.IDAL
 {
     public partial interface IDBSession
     {
-        		
+   		
 	 ITestRepository ITestRepository{get;set;}
     }
 }
