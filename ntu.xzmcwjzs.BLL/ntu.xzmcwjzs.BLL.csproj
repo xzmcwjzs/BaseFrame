@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework6.Extended.NET45">
+      <HintPath>..\packages\EntityFramework6.Extended.6.0.2\lib\net45\EntityFramework6.Extended.NET45.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
