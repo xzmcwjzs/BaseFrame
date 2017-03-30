@@ -12,9 +12,9 @@ using WindowsFormsApplicationDemo.MongoDB;
 
 namespace WindowsFormsApplicationDemo
 {
-    public partial class Form1 : Form
+    public partial class MongoDBDemo : Form
     {
-        public Form1()
+        public MongoDBDemo()
         {
             InitializeComponent();
         }

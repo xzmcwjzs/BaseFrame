@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplicationDemo
 {
-    partial class Form1
+    partial class MongoDBDemo
     {
         /// <summary>
         /// 必需的设计器变量。
