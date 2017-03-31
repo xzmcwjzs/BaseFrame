@@ -17,6 +17,12 @@ namespace ntu.xzmcwjzs.IDAL
     public partial interface IDBSession
     {
    		
+	 IArticleRepository IArticleRepository{get;set;}
+		
+	 ISearchDetailRepository ISearchDetailRepository{get;set;}
+		
+	 ISearchTotalRepository ISearchTotalRepository{get;set;}
+		
 	 ITestRepository ITestRepository{get;set;}
     }
 }

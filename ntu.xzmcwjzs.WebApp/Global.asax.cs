@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using ntu.xzmcwjzs.Ioc;
+using ntu.xzmcwjzs.WebApp.Common.LuceneHelper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,9 @@ namespace ntu.xzmcwjzs.WebApp
             //使用autofac 注入
             RegisterDependency(); 
             //从配置文件读取log4net的配置，然后进行一个初始化工作。
-            log4net.Config.XmlConfigurator.Configure(); 
+            log4net.Config.XmlConfigurator.Configure();
+            //开启线程扫描 Lucene队列数据
+            IndexManager.GetInstance().StartThread();
 
 
             AreaRegistration.RegisterAllAreas();

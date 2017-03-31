@@ -22,6 +22,48 @@ namespace ntu.xzmcwjzs.DALSessionFactory
     public partial class DBSession : IDBSession
     {
 		
+	  private IArticleRepository _ArticleRepository;
+        public IArticleRepository IArticleRepository
+        {
+            get
+            {
+                if (_ArticleRepository == null)
+                {
+                    _ArticleRepository = AbstractFactory.GetArticleRepository();
+                }
+                return _ArticleRepository;
+            }
+            set { _ArticleRepository = value; }
+        }
+		
+	  private ISearchDetailRepository _SearchDetailRepository;
+        public ISearchDetailRepository ISearchDetailRepository
+        {
+            get
+            {
+                if (_SearchDetailRepository == null)
+                {
+                    _SearchDetailRepository = AbstractFactory.GetSearchDetailRepository();
+                }
+                return _SearchDetailRepository;
+            }
+            set { _SearchDetailRepository = value; }
+        }
+		
+	  private ISearchTotalRepository _SearchTotalRepository;
+        public ISearchTotalRepository ISearchTotalRepository
+        {
+            get
+            {
+                if (_SearchTotalRepository == null)
+                {
+                    _SearchTotalRepository = AbstractFactory.GetSearchTotalRepository();
+                }
+                return _SearchTotalRepository;
+            }
+            set { _SearchTotalRepository = value; }
+        }
+		
 	  private ITestRepository _TestRepository;
         public ITestRepository ITestRepository
         {

@@ -1,0 +1,17 @@
+﻿using ntu.xzmcwjzs.Model.Enum;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ntu.xzmcwjzs.Model.ViewModel
+{
+  public  class FenCiViewModel
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public LuceneTypeEnum LuceneTypeEnum { get; set; }
+    }
+}

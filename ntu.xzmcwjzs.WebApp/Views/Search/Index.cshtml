@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+@using ntu.xzmcwjzs.Model.ViewModel;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>搜索</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <form method="get" action="/Search/SearchContent" class="form-inline">
+            <div style="width:90%;margin:0 auto;padding-top:50px;">
+                <div class="form-group" style="width:60%">
+                    <label class="sr-only" for="txtSearch">key words</label>
+                    <input type="text" name="txtSearch" id="txtSearch" class="form-control" placeholder="请输入关键字" />
+                </div>
+                <input type="submit" value="搜一搜" class="btn btn-danger" name="btnSearch" />
+                @*<input type="submit" value="创建索引" class="btn btn-primary" name="btnCreate" />*@
+            </div>
+        </form>
+        <br />
+        <div style="width:90%;margin:0 auto;padding-top:10px;">
+            <dl>
+                @if (ViewData["list"] != null)
+            {
+                foreach (FenCiViewModel item in (List<FenCiViewModel>)ViewData["list"])
+                {
+                        <dt class="list-group-item"><a href="javascript:void(0)">@item.Title</a></dt>
+                        <dd class="list-group-item">@MvcHtmlString.Create(item.Content)</dd>
+                    }
+                }
+            </dl>
+        </div>
+    </div>
+</body>
+</html>

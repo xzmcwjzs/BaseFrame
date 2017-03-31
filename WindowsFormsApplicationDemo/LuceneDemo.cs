@@ -132,7 +132,7 @@ namespace WindowsFormsApplicationDemo
         private void button4_Click(object sender, EventArgs e)
         {
             string indexPath = @"C:\Lucenedir";
-            string kw = "赵";//对用户输入的搜索条件进行拆分。
+            string kw = "刘备";//对用户输入的搜索条件进行拆分。
             FSDirectory directory = FSDirectory.Open(new DirectoryInfo(indexPath), new NoLockFactory());
             IndexReader reader = IndexReader.Open(directory, true);
             IndexSearcher searcher = new IndexSearcher(reader);

@@ -15,6 +15,18 @@ using System.Threading.Tasks;
 namespace ntu.xzmcwjzs.IBLL.IServices
 {
  		
+	public partial interface IArticleService : IBaseService<Article>
+    {
+    }
+		
+	public partial interface ISearchDetailService : IBaseService<SearchDetail>
+    {
+    }
+		
+	public partial interface ISearchTotalService : IBaseService<SearchTotal>
+    {
+    }
+		
 	public partial interface ITestService : IBaseService<Test>
     {
     }
