@@ -9,9 +9,44 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>搜索</title>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $("#txtSearch").autocomplete({
+                minLength: 1, // 设置搜索的关键字最小长度
+                source: function (request, response) {
+                    $.ajax({
+                        type: "get",
+                        // 通过request.term可以获得文本框内容
+                        url: "/Search/AutoComplete?keyword=" + request.term,
+                        dataType: "json",
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                }
+            });
+        }); 
+    </script>
+    <style>
+        #divKeyWords {
+            text-align: left;
+            width: 520px;
+            padding-left: 4px;
+        }
+
+            #divKeyWords a {
+                text-decoration: none;
+            }
+
+                #divKeyWords a:hover {
+                    color: red;
+                }
+    </style>
 </head>
 <body>
     <div>
@@ -23,6 +58,16 @@
                 </div>
                 <input type="submit" value="搜一搜" class="btn btn-danger" name="btnSearch" />
                 @*<input type="submit" value="创建索引" class="btn btn-primary" name="btnCreate" />*@
+                <div id="divKeyWords">
+                    <span>热门搜索：</span>
+                    @if (ViewBag.KeyWords != null)
+                    {
+                        foreach (string v in ViewBag.KeyWords)
+                        {
+                            <a href="javascript:void(0)" style="padding-left:2px;">@v</a>
+                        }
+                    }
+                </div>
             </div>
         </form>
         <br />
@@ -32,7 +77,7 @@
             {
                 foreach (FenCiViewModel item in (List<FenCiViewModel>)ViewData["list"])
                 {
-                        <dt class="list-group-item"><a href="javascript:void(0)">@item.Title</a></dt>
+                        <dt class="list-group-item"><a href="/Search/Content" target="_blank">@item.Title</a></dt>
                         <dd class="list-group-item">@MvcHtmlString.Create(item.Content)</dd>
                     }
                 }

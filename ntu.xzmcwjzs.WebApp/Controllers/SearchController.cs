@@ -18,12 +18,18 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
     public class SearchController : Controller
     {
         private readonly IArticleService articleService;
-        public SearchController(IArticleService service)
+        private readonly ISearchDetailService searchDetailService;
+        private readonly ISearchTotalService searchTotalService;
+        public SearchController(IArticleService articleService, ISearchDetailService searchDetailService,ISearchTotalService searchTotalService)
         {
-            this.articleService = service;
+            this.articleService = articleService;
+            this.searchDetailService = searchDetailService;
+            this.searchTotalService = searchTotalService;
         }
         public ActionResult Index()
         {
+            var keyWords = searchTotalService.LoadEntities(t => true).OrderByDescending(t => t.SearchCounts).Select(t => t.KeyWords).Skip(0).Take(5).ToList(); 
+             ViewBag.KeyWords = keyWords;
             return View();
         }
 
@@ -33,6 +39,8 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
             {
                List<Model.ViewModel.FenCiViewModel> list= ShowSearchContent();
                 ViewData["list"] = list;
+                var keyWords = searchTotalService.LoadEntities(t => true).OrderByDescending(t => t.SearchCounts).Select(t => t.KeyWords).Skip(0).Take(5).ToList();
+                ViewBag.KeyWords = keyWords;
                 return View("Index");
             }
             else
@@ -116,8 +124,24 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
 
                 viewModelList.Add(viewModel);
             }
+            //将搜索词插入到明细表中
+            SearchDetail model = new SearchDetail { Id = Guid.NewGuid(), KeyWords = Request["txtSearch"], SearchDateTime = DateTime.Now };
+            searchDetailService.AddEntity(model);
+
             return viewModelList;
         }
+         
+        public ActionResult AutoComplete()
+        {
+            string keyword = Request["keyword"];
+            List<string> list = searchTotalService.LoadEntities(t => t.KeyWords.Contains(keyword)).Select(t => t.KeyWords).ToList();
 
+            return Json(list.ToArray(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Content()
+        {
+            return View();
+        }
     }
 }
