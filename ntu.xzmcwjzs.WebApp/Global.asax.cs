@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using ntu.xzmcwjzs.Ioc;
+using ntu.xzmcwjzs.Core;
 using ntu.xzmcwjzs.WebApp.Common.LuceneHelper;
 using System;
 using System.Collections.Generic;

@@ -20,12 +20,23 @@ namespace ntu.xzmcwjzs.WebApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.js"));
+
+            //jquery-ui.js
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include("~/Scripts/jquery-ui-1.12.1.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/themes/base/jquery-ui.css"));
+
+            //jquery-easyui
+            bundles.Add(new ScriptBundle("~/bundles/jquery-easyui").Include("~/Scripts/jquery.easyui.min.js",
+                "~/Scripts/locale/easyui-lang-zh_CN.js"));
+            bundles.Add(new StyleBundle("~/Content/jquery-easyui").Include(
+                      "~/Content/themes/bootstrap/easyui.css",
+                      "~/Content/themes/icon.css",
+                     "~/Content/themes/color.css"));
+
         }
     }
 }

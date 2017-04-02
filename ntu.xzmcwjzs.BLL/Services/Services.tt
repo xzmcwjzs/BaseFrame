@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ntu.xzmcwjzs.IDAL.IRepositories;
 
 namespace ntu.xzmcwjzs.BLL.Services
 {
@@ -58,9 +59,11 @@ foreach (string className in ClassNameList)
 #>		
 	  public partial class <#=className#>Service:BaseService<<#=className#>>,I<#=className#>Service
     {
-        public override void SetCurretnRepository()
+        public I<#=className#>Repository repository;
+        public <#=className#>Service(I<#=className#>Repository repository)
         {
-            CurrentRepository = this.GetCurrentDbSession.I<#=className#>Repository;
+            this.repository = repository;
+            base.CurrentRepository = repository;
         }
     }
 <#}

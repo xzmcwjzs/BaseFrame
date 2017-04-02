@@ -49,12 +49,6 @@
   <ItemGroup>
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IDBContextFactory.cs" />
-    <Compile Include="IDBSession.cs" />
-    <Compile Include="IDBSession1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IDBSession.tt</DependentUpon>
-    </Compile>
     <Compile Include="IRepositories\IRepositories.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,10 +64,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IDBSession.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IDBSession1.cs</LastGenOutput>
-    </Content>
     <Content Include="IRepositories\IRepositories.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IRepositories.cs</LastGenOutput>

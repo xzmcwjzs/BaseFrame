@@ -12,39 +12,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ntu.xzmcwjzs.IDAL.IRepositories;
 
 namespace ntu.xzmcwjzs.BLL.Services
 {
  		
 	  public partial class ArticleService:BaseService<Article>,IArticleService
     {
-        public override void SetCurretnRepository()
+        public IArticleRepository repository;
+        public ArticleService(IArticleRepository repository)
         {
-            CurrentRepository = this.GetCurrentDbSession.IArticleRepository;
+            this.repository = repository;
+            base.CurrentRepository = repository;
         }
     }
 		
 	  public partial class SearchDetailService:BaseService<SearchDetail>,ISearchDetailService
     {
-        public override void SetCurretnRepository()
+        public ISearchDetailRepository repository;
+        public SearchDetailService(ISearchDetailRepository repository)
         {
-            CurrentRepository = this.GetCurrentDbSession.ISearchDetailRepository;
+            this.repository = repository;
+            base.CurrentRepository = repository;
         }
     }
 		
 	  public partial class SearchTotalService:BaseService<SearchTotal>,ISearchTotalService
     {
-        public override void SetCurretnRepository()
+        public ISearchTotalRepository repository;
+        public SearchTotalService(ISearchTotalRepository repository)
         {
-            CurrentRepository = this.GetCurrentDbSession.ISearchTotalRepository;
+            this.repository = repository;
+            base.CurrentRepository = repository;
         }
     }
 		
 	  public partial class TestService:BaseService<Test>,ITestService
     {
-        public override void SetCurretnRepository()
+        public ITestRepository repository;
+        public TestService(ITestRepository repository)
         {
-            CurrentRepository = this.GetCurrentDbSession.ITestRepository;
+            this.repository = repository;
+            base.CurrentRepository = repository;
         }
     }
 }

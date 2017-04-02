@@ -57,10 +57,6 @@
       <Project>{aec92432-d8bd-4df1-9256-39748d0fb6c0}</Project>
       <Name>ntu.xzmcwjzs.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ntu.xzmcwjzs.DALSessionFactory\ntu.xzmcwjzs.DALSessionFactory.csproj">
-      <Project>{6d06f944-119c-4c00-b487-4f0af640aaea}</Project>
-      <Name>ntu.xzmcwjzs.DALSessionFactory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ntu.xzmcwjzs.IBLL\ntu.xzmcwjzs.IBLL.csproj">
       <Project>{11df9826-60f8-4387-8c56-27ceb409c94b}</Project>
       <Name>ntu.xzmcwjzs.IBLL</Name>

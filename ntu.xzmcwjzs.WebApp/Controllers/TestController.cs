@@ -1,35 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ntu.xzmcwjzs.Model.DataBaseContext;
-using ntu.xzmcwjzs.Model.Entities;
-using ntu.xzmcwjzs.IBLL.IServices; 
 
 namespace ntu.xzmcwjzs.WebApp.Controllers
 {
-    public class TestController : BaseController
+    public class TestController : Controller
     {
-        //private XZMCWJZSContext db = new XZMCWJZSContext();
-        //ITestService service = new TestService();
-        private readonly ITestService service; 
-        public TestController(ITestService service)
+        private readonly IBLL.IServices.ITestService testService;
+        public TestController(IBLL.IServices.ITestService testService)
         {
-            this.service = service;
-        } 
-        // GET: Test
+            this.testService = testService;
+        }
         public ActionResult Index()
         { 
-            // return View(await db.Test.ToListAsync());
-            var list = service.LoadEntities(t => true).ToList();
-            return View(list);
+            return View();
         }
+        [HttpPost]
+        public JsonResult GetList()
+        {
+            var list = testService.LoadEntityAsNoTracking(t => true).ToList();
+            var json = new
+            {
+                total = list.Count,
+                rows = (from t in list
+                        select new Model.Entities.Test()
+                        {
 
-       
+                            id = t.id,
+                            name = t.name,
+                            password=t.password,
+                            id_card_num=t.id_card_num,
+                            birthdate=t.birthdate,
+                            photo=t.photo,
+                            createtime=t.createtime
+                        }).ToArray()
+            };
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
     }
 }
