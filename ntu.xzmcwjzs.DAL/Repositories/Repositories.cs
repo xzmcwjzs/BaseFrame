@@ -27,6 +27,10 @@ namespace ntu.xzmcwjzs.DAL.Repositories
     {
 	}
 		
+	public partial class SysModuleRepository:BaseRepository<SysModule>,ISysModuleRepository
+    {
+	}
+		
 	public partial class TestRepository:BaseRepository<Test>,ITestRepository
     {
 	}

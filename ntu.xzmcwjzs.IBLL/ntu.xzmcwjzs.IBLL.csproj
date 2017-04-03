@@ -49,6 +49,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IServices.tt</DependentUpon>
     </Compile>
+    <Compile Include="IServices\ISysModuleService.cs" />
     <Compile Include="IServices\ITestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

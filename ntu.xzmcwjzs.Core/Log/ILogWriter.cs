@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ntu.xzmcwjzs.Common.Log
+namespace ntu.xzmcwjzs.Core.Log
 {
     public interface ILogWriter
     {

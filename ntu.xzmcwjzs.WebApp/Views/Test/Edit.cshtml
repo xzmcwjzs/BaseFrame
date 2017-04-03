@@ -1,0 +1,123 @@
+﻿@model  ntu.xzmcwjzs.Model.Entities.Test
+@{
+    ViewBag.Title = "修改";
+    Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+
+}
+
+<script type="text/javascript"> 
+    $(function () {
+        $("#btnSave").click(function () {
+            $.ajax({
+                url: "/Test/Create",
+                type: "Post",
+                data: $("#CreateForm").serialize(),
+                dataType: "json",
+                success: function (data) {
+                    if (data == 1) {
+                        window.parent.frameReturnByMes("成功");
+                        window.parent.frameReturnByReload(true);
+                        window.parent.frameReturnByClose()
+                    }
+                    else {
+                        window.parent.frameReturnByMes("失败");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+
+<div>
+    <a id="btnSave" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+</div>
+@using (Html.BeginForm("Edit", "Test", null, FormMethod.Post, new { id = "CreateForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table>
+        <tbody>
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    ID：
+                </td>
+                <td style="width:310px">
+                    @Html.EditorFor(model => model.id)
+                </td>
+                <td>@Html.ValidationMessageFor(model => model.id)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    姓名：
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.name)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.name)
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    密码：
+                </td>
+
+                <td>
+                    @Html.EditorFor(model => model.password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.password)
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    身份证号：
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.id_card_num)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.id_card_num)
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    出身日期：
+                </td>
+
+                <td>
+                    @Html.EditorFor(model => model.birthdate)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.birthdate)
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    美图：
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.photo)
+
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.photo)
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px; text-align:right;">
+                    创建日期：
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.createtime)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.createtime)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}

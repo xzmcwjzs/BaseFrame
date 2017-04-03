@@ -26,6 +26,10 @@ namespace ntu.xzmcwjzs.IDAL.IRepositories
     {
     }
 		
+	 public partial  interface ISysModuleRepository:IBaseRepository<SysModule>
+    {
+    }
+		
 	 public partial  interface ITestRepository:IBaseRepository<Test>
     {
     }

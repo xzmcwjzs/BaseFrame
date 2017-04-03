@@ -53,6 +53,7 @@
     <Compile Include="Entities\Article.cs" />
     <Compile Include="Entities\SearchDetail.cs" />
     <Compile Include="Entities\SearchTotal.cs" />
+    <Compile Include="Entities\SysModule.cs" />
     <Compile Include="Entities\Test.cs" />
     <Compile Include="Enum\DeleteEnumType.cs" />
     <Compile Include="Enum\LuceneTypeEnum.cs" />

@@ -1,4 +1,4 @@
-﻿using ntu.xzmcwjzs.Common.Log;
+﻿using ntu.xzmcwjzs.Core.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;

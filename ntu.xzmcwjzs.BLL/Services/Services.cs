@@ -47,6 +47,16 @@ namespace ntu.xzmcwjzs.BLL.Services
         }
     }
 		
+	  public partial class SysModuleService:BaseService<SysModule>,ISysModuleService
+    {
+        public ISysModuleRepository repository;
+        public SysModuleService(ISysModuleRepository repository)
+        {
+            this.repository = repository;
+            base.CurrentRepository = repository;
+        }
+    }
+		
 	  public partial class TestService:BaseService<Test>,ITestService
     {
         public ITestRepository repository;

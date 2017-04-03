@@ -27,6 +27,10 @@ namespace ntu.xzmcwjzs.IBLL.IServices
     {
     }
 		
+	public partial interface ISysModuleService : IBaseService<SysModule>
+    {
+    }
+		
 	public partial interface ITestService : IBaseService<Test>
     {
     }

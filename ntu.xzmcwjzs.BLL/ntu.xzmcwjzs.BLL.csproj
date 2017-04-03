@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Services.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\SysModuleService.cs" />
     <Compile Include="Services\TestService.cs" />
   </ItemGroup>
   <ItemGroup>
