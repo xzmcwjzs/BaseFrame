@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ntu.xzmcwjzs.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ntu.xzmcwjzs.Model.Entities;
 
 namespace ntu.xzmcwjzs.WebApp.Controllers
 {
@@ -18,12 +20,12 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult GetList()
-        {
-            var list = testService.LoadEntityAsNoTracking(t => true).ToList();
+        public JsonResult GetList(GridPager pager)
+        { 
+            var list = testService.GetList(ref pager);
             var json = new
             {
-                total = list.Count,
+                total = pager.totalRows,
                 rows = (from t in list
                         select new Model.Entities.Test()
                         {
@@ -39,5 +41,91 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
             };
             return Json(json, JsonRequestBehavior.AllowGet);
         }
+        #region 创建
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Create(Test model)
+        {
+
+
+            if (testService.AddEntity(model))
+            {
+                return Json(1, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        #endregion
+
+        #region 修改
+
+        public ActionResult Edit(string id)
+        {
+           Int32 i = Convert.ToInt32(id);
+            Test entity = testService.LoadEntities(t=>t.id==i).FirstOrDefault(); 
+            return View(entity);
+        }
+
+        [HttpPost]
+
+        public JsonResult Edit(Test model)
+        {
+
+
+            if (testService.UpdateEntity(model))
+            {
+                return Json(1, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        #endregion
+
+        #region 详细
+        public ActionResult Details(string id)
+        {
+            Int32 i = Convert.ToInt32(id);
+            Test entity = testService.LoadEntities(t => t.id == i).FirstOrDefault();
+            return View(entity);
+        }
+
+        #endregion
+
+        #region 删除
+        [HttpPost]
+        public JsonResult Delete(string id)
+        {
+           
+            if (!string.IsNullOrWhiteSpace(id))
+            {
+                Int32 i = Convert.ToInt32(id);
+                if (testService.DeleteByLambda(t=>t.id==i))
+                {
+                    return Json(1, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+
+                    return Json(0, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            } 
+        }
+        #endregion
+
     }
+
 }

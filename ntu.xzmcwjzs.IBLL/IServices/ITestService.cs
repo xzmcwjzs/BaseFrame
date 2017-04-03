@@ -1,4 +1,5 @@
-﻿using ntu.xzmcwjzs.Model.Entities;
+﻿using ntu.xzmcwjzs.Common;
+using ntu.xzmcwjzs.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace ntu.xzmcwjzs.IBLL.IServices
 {
     public partial interface ITestService : IBaseService<Test>
     {
+        List<Test> GetList(ref GridPager pager); 
     }
 }

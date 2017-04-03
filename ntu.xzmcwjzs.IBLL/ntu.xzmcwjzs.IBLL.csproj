@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ntu.xzmcwjzs.Common\ntu.xzmcwjzs.Common.csproj">
+      <Project>{aec92432-d8bd-4df1-9256-39748d0fb6c0}</Project>
+      <Name>ntu.xzmcwjzs.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ntu.xzmcwjzs.IDAL\ntu.xzmcwjzs.IDAL.csproj">
       <Project>{ffc838cb-e8bd-4465-991f-82dcc1bd30a7}</Project>
       <Name>ntu.xzmcwjzs.IDAL</Name>

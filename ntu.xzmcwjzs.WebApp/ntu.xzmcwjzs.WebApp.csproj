@@ -403,6 +403,8 @@
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.easyui.min.js" />
+    <Content Include="Scripts\jquery.easyui.plus.js" />
+    <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -452,6 +454,8 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_Index_Layout.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Shared\_Index_LayoutEdit.cshtml" />
+    <Content Include="Views\Test\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

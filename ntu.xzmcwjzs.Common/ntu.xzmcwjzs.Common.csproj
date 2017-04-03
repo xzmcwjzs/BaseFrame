@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CacheHelper.cs" />
     <Compile Include="CommonFunc.cs" />
+    <Compile Include="GridPager.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Log\ILogWriter.cs" />
     <Compile Include="Log\Log4NetWriter.cs" />

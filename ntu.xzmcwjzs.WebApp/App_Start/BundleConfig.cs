@@ -31,7 +31,8 @@ namespace ntu.xzmcwjzs.WebApp
 
             //jquery-easyui
             bundles.Add(new ScriptBundle("~/bundles/jquery-easyui").Include("~/Scripts/jquery.easyui.min.js",
-                "~/Scripts/locale/easyui-lang-zh_CN.js"));
+                "~/Scripts/locale/easyui-lang-zh_CN.js",
+                "~/Scripts/jquery.easyui.plus.js"));
             bundles.Add(new StyleBundle("~/Content/jquery-easyui").Include(
                       "~/Content/themes/bootstrap/easyui.css",
                       "~/Content/themes/icon.css",
