@@ -1,4 +1,5 @@
 ﻿using ntu.xzmcwjzs.Model.Entities;
+using ntu.xzmcwjzs.Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace ntu.xzmcwjzs.IBLL.IServices
 {
     public partial interface ISysModuleService : IBaseService<SysModule>
     {
-        List<SysModule> GetMenuByPersonId(string moduleId);
+        List<TreeViewModel> ToTreeNodesByPid(string pid);
     }
 }

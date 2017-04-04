@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ntu.xzmcwjzs.IBLL.IServices;
-using ntu.xzmcwjzs.Model.Entities; 
+using ntu.xzmcwjzs.Model.Entities;
+using ntu.xzmcwjzs.Model.ViewModel;
 
 namespace ntu.xzmcwjzs.WebApp.Controllers
 {
@@ -27,22 +28,27 @@ namespace ntu.xzmcwjzs.WebApp.Controllers
         public JsonResult GetTree(string id)
         {
 
-            List<SysModule> menus = sysModuleService.GetMenuByPersonId(id);
+            List<TreeViewModel>nodeList = sysModuleService.ToTreeNodesByPid(id);
+            //foreach (var item in menus)
+            //{
+            //    if (!item.IsLast) {
+            //        List<SysModule> children = sysModuleService.GetMenuByPersonId(item.Id);
+            //    }
+            //} 
             var jsonData = (
-                    from m in menus
+                    from m in nodeList
                     select new
                     {
-                        id = m.Id,
-                        text = m.Name,
-                        value = m.Url,
-                        showcheck = false,
-                        complete = false,
-                        isexpand = false,
-                        checkstate = 0,
-                        hasChildren = m.IsLast ? false : true,
-                        Icon = m.Iconic
+                        id = m.id,
+                        text = m.text,
+                        children=m.children,
+                        state=m.state, 
+                        url = m.url, 
+                        icon = m.icon
                     }
                 ).ToArray();
+
+
             return Json(jsonData, JsonRequestBehavior.AllowGet); 
         } 
     }
