@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{39564DDA-39A0-40F8-B743-E7BAE92DCB2E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplicationDemo</RootNamespace>
     <AssemblyName>WindowsFormsApplicationDemo</AssemblyName>
@@ -55,6 +55,9 @@
       <HintPath>..\packages\MongoDB.Driver.Core.2.4.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PanGu, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\PanGu.Segment.0.0.3\lib\PanGu.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crawler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crawler.Designer.cs">
+      <DependentUpon>Crawler.cs</DependentUpon>
+    </Compile>
     <Compile Include="LuceneDemo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +110,9 @@
     <Compile Include="MongoDB\users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Crawler.resx">
+      <DependentUpon>Crawler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LuceneDemo.resx">
       <DependentUpon>LuceneDemo.cs</DependentUpon>
     </EmbeddedResource>
