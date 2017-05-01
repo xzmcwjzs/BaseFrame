@@ -67,7 +67,7 @@ namespace ntu.xzmcwjzs.ADODAL
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
+            } 
         }
         #endregion
 

@@ -45,8 +45,9 @@
                 lines: true,
                 dnd:true,
                 url: "/Home/GetTree?id=0", 
-                onClick: function (node) { 
-                    if (!node.children) { 
+                onClick: function (node) {
+                    if (node.children) {
+                        alert(node.url);
                         addTab(node.text, node.url, node.icon);
                     } 
                 },

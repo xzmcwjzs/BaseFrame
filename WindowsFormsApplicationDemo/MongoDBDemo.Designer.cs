@@ -32,11 +32,23 @@
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.Query = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Insert
             // 
-            this.Insert.Location = new System.Drawing.Point(175, 130);
+            this.Insert.Location = new System.Drawing.Point(96, 39);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(122, 47);
             this.Insert.TabIndex = 0;
@@ -46,7 +58,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(175, 206);
+            this.Delete.Location = new System.Drawing.Point(365, 39);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(122, 47);
             this.Delete.TabIndex = 1;
@@ -56,7 +68,7 @@
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(403, 130);
+            this.Update.Location = new System.Drawing.Point(237, 39);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(122, 47);
             this.Update.TabIndex = 2;
@@ -66,7 +78,7 @@
             // 
             // Query
             // 
-            this.Query.Location = new System.Drawing.Point(403, 206);
+            this.Query.Location = new System.Drawing.Point(493, 42);
             this.Query.Name = "Query";
             this.Query.Size = new System.Drawing.Size(122, 44);
             this.Query.TabIndex = 3;
@@ -74,16 +86,148 @@
             this.Query.UseVisualStyleBackColor = true;
             this.Query.Click += new System.EventHandler(this.Query_Click);
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(96, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 47);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "MSSQL批量插入";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(96, 204);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(122, 48);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "MongoDB批量插入";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(237, 118);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(122, 46);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "MSSQL批量删除";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(365, 118);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(122, 46);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "MSSQL单条更新";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(493, 118);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(122, 47);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "MSQSQL查询";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(237, 204);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(122, 48);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "MongoDB批量删除";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(365, 204);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(122, 48);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "MongoDB单条更新";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(493, 204);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(122, 48);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "MongoDB查询";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(96, 291);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(122, 54);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "MSSQL并发foreach批量插入";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(237, 291);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(122, 54);
+            this.button10.TabIndex = 13;
+            this.button10.Text = "MongoDB并发foreach批量插入";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(96, 367);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(122, 50);
+            this.button11.TabIndex = 14;
+            this.button11.Text = "MSSQL并发×";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(237, 367);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(122, 50);
+            this.button12.TabIndex = 15;
+            this.button12.Text = "MongoDB并发×";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // MongoDBDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 490);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Query);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Insert);
-            this.Name = "Form1";
+            this.Name = "MongoDBDemo";
             this.Text = "MongoDB";
             this.ResumeLayout(false);
 
@@ -95,6 +239,18 @@
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button Query;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

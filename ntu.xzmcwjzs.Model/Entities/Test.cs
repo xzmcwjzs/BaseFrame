@@ -21,7 +21,7 @@ namespace ntu.xzmcwjzs.Model.Entities
         [Required(ErrorMessage ="身份证号必须")]
         [MaxLength(50)]
         public string id_card_num { get; set; } 
-        public DateTime? birthdate { get; set; }
+        public DateTime birthdate { get; set; }
         [MaxLength(50)]
         public string photo { get; set; }
         [Required(ErrorMessage = "创建日期必须")]

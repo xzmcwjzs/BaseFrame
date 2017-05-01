@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{39564DDA-39A0-40F8-B743-E7BAE92DCB2E}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplicationDemo</RootNamespace>
     <AssemblyName>WindowsFormsApplicationDemo</AssemblyName>
@@ -164,6 +164,16 @@
     <Content Include="Dict\Wildcard.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ntu.xzmcwjzs.ADODAL\ntu.xzmcwjzs.ADODAL.csproj">
+      <Project>{8a4d6635-6707-4df2-85a5-531a4d82602f}</Project>
+      <Name>ntu.xzmcwjzs.ADODAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ntu.xzmcwjzs.Model\ntu.xzmcwjzs.Model.csproj">
+      <Project>{60c82364-fcd9-4879-9053-61f6b47adcf5}</Project>
+      <Name>ntu.xzmcwjzs.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
